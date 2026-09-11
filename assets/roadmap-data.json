@@ -1,0 +1,12 @@
+{
+  "title": "MissingPawn rating progression",
+  "targetElo": 3000,
+  "sourceLabel": "Sample data",
+  "points": [
+    {"version": "MissingPawn v1", "elo": 970, "source": "CCI", "timeControl": "VLTC", "date": "Sample", "x": 90, "y": 260},
+    {"version": "MissingPawn v1.1", "elo": 1180, "source": "CCI", "timeControl": "VLTC", "date": "Sample", "x": 190, "y": 245},
+    {"version": "MissingPawn v1.2", "elo": 1450, "source": "CCI", "timeControl": "Quick", "date": "Sample", "x": 310, "y": 200},
+    {"version": "MissingPawn v2", "elo": 1650, "source": "CCI", "timeControl": "VLTC", "date": "Sample", "x": 470, "y": 165},
+    {"version": "MissingPawn future", "elo": 2200, "source": "CCI", "timeControl": "VLTC", "date": "Sample", "x": 640, "y": 135}
+  ]
+}

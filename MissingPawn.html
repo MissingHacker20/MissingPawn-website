@@ -112,8 +112,9 @@
 
     .primary-menu {
       display: flex;
-      align-items: center;
-      gap: 28px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -151,6 +152,17 @@
       transform: scaleX(1);
     }
 
+    .primary-menu li {
+      width: 100%;
+      display: block;
+    }
+
+    .primary-menu li a {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
     .nav-external {
       display: flex;
       align-items: center;
@@ -158,6 +170,13 @@
       padding-left: 20px;
       border-left: 1px solid var(--line);
       margin-left: 4px;
+    }
+
+    .secondary-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
     }
 
     .language-switcher {
@@ -647,6 +666,7 @@
 
     .chess-board {
       width: min(480px, 100%);
+      max-width: 480px;
       aspect-ratio: 1 / 1;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
@@ -665,6 +685,10 @@
       position: relative;
       font-size: clamp(2rem, calc(4vw), 3rem);
       color: var(--text);
+      aspect-ratio: 1 / 1;
+      min-height: 42px;
+      width: 100%;
+      height: 100%;
     }
 
     .square.light {
@@ -680,6 +704,45 @@
     .square.last-move {
       outline: 2px solid var(--red);
       outline-offset: -4px;
+    }
+
+    .selected-square {
+      outline: 2px solid var(--green);
+      outline-offset: -4px;
+    }
+
+    .roadmap-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+
+    .roadmap-point {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 140px;
+    }
+
+    .roadmap-version {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .roadmap-elo {
+      color: var(--red-bright);
+      font-weight: 800;
+    }
+
+    .roadmap-meta {
+      color: var(--muted);
+      font-size: 0.78rem;
     }
 
     .game-panel {
@@ -902,7 +965,7 @@
   <header class="site-header">
     <div class="header-wrap">
       <a class="brand" href="#home" aria-label="MissingPawn">
-        <img src="assets/logo.svg" alt="MissingPawn official logo" />
+        <img src="assets/missingpawn-logo.png" alt="MissingPawn official logo" />
         <span>MissingPawn</span>
       </a>
 
@@ -916,12 +979,10 @@
           <li><a href="#about">About</a></li>
           <li><a href="#roadmap">Road to 3000</a></li>
           <li><a href="#play">Play MissingPawn</a></li>
-          <li class="nav-external">
-            <a href="#github">GitHub</a>
-            <a href="#ccrl">CCRL</a>
-            <a href="#facebook">Facebook</a>
-            <a href="mailto:contact@missingpawn.example">E-mail</a>
-          </li>
+          <li><a href="https://github.com/MissingHacker20/MissingPawn">GitHub</a></li>
+          <li><a href="https://computerchess.org.uk/404/">CCRL</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61592214227744&locale=pl_PL">Facebook</a></li>
+          <li><a href="mailto:MPchessengine@gmail.com">E-mail</a></li>
           <li class="language-switcher">
             <a class="active" href="#en">EN</a><span class="sep">|</span><a href="#pl">PL</a>
           </li>
@@ -940,9 +1001,9 @@
           evaluation and the role of pawn structures in chess.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#github">GitHub</a>
-          <a class="btn" href="#ccrl">CCRL</a>
-          <a class="btn" href="#facebook">Facebook</a>
+          <a class="btn primary" href="https://github.com/MissingHacker20/MissingPawn">GitHub</a>
+          <a class="btn" href="https://computerchess.org.uk/404/">CCRL</a>
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61592214227744&locale=pl_PL">Facebook</a>
           <a class="btn" href="#about">About</a>
           <a class="btn" href="#roadmap">Road to 3000</a>
           <a class="btn" href="#play">Play MissingPawn</a>
@@ -1027,46 +1088,7 @@
         </article>
       </div>
 
-      <section class="section" style="padding: 56px 0 0;">
-        <div class="section-kicker">History</div>
-        <h2>Project Timeline</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Beginning of MissingPawn</strong>
-            Initial concept and development.
-          </div>
-          <div class="timeline-item">
-            <strong>MissingPawn v1</strong>
-            First public engine direction.
-          </div>
-          <div class="timeline-item">
-            <strong>Public Releases</strong>
-            First release and testing materials.
-          </div>
-          <div class="timeline-item">
-            <strong>CCRL Participation</strong>
-            Rating and test exploration.
-          </div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>MissingPawn v2</strong>
-            Modernized engine and research path.
-          </div>
-          <div class="timeline-item">
-            <strong>Future Development</strong>
-            Continued engine growth and testing.
-          </div>
-          <div class="timeline-item">
-            <strong>Release Workflow</strong>
-            GitHub and UCI-compatible GUI usage.
-          </div>
-          <div class="timeline-item">
-            <strong>Road to 3000</strong>
-            Objective rating benchmark path.
-          </div>
-        </div>
-      </section>
+
     </section>
 
     <section class="section roadmap-section" id="roadmap">
@@ -1081,9 +1103,10 @@
 
       <section class="chart-wrap">
         <div class="chart-note">
-          <span>MissingPawn rating progression</span>
-          <span class="sample">Sample data</span>
+          <span id="roadmapTitle">MissingPawn rating progression</span>
+          <span class="sample" id="roadmapSource">Sample data</span>
         </div>
+        <div id="roadmapPoints" class="roadmap-points"></div>
         <svg class="chart-svg" viewBox="0 0 820 360" role="img" aria-label="MissingPawn rating development chart">
           <defs>
             <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
@@ -1167,79 +1190,7 @@
       <div class="section-kicker">Play MissingPawn</div>
       <div class="play-grid">
         <section>
-          <div class="chess-board" id="chessBoard" aria-label="Interactive chess board">
-            <div class="square light">♜</div>
-            <div class="square dark">♞</div>
-            <div class="square light">♝</div>
-            <div class="square dark">♛</div>
-            <div class="square light">♚</div>
-            <div class="square dark">♝</div>
-            <div class="square light">♞</div>
-            <div class="square dark">♜</div>
-
-            <div class="square dark">♟</div>
-            <div class="square light">♟</div>
-            <div class="square dark">♟</div>
-            <div class="square light">♟</div>
-            <div class="square dark">♟</div>
-            <div class="square light">♟</div>
-            <div class="square dark">♟</div>
-            <div class="square light">♟</div>
-
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-            <div class="square dark"></div>
-            <div class="square light"></div>
-
-            <div class="square light">♙</div>
-            <div class="square dark">♙</div>
-            <div class="square light">♙</div>
-            <div class="square dark">♙</div>
-            <div class="square light">♙</div>
-            <div class="square dark">♙</div>
-            <div class="square light">♙</div>
-            <div class="square dark">♙</div>
-
-            <div class="square dark">♖</div>
-            <div class="square light">♘</div>
-            <div class="square dark">♗</div>
-            <div class="square light">♕</div>
-            <div class="square dark">♔</div>
-            <div class="square light">♗</div>
-            <div class="square dark">♘</div>
-            <div class="square light">♖</div>
-          </div>
+          <div class="chess-board" id="chessBoard" aria-label="Interactive chess board"></div>
         </section>
 
         <aside class="game-panel">
@@ -1274,12 +1225,12 @@
         <article class="download-card">
           <h3>GitHub Releases</h3>
           <p>Source code and release packaging can be published through the project GitHub repository.</p>
-          <a class="btn primary" href="#github">GitHub Releases</a>
+          <a class="btn primary" href="https://github.com/MissingHacker20/MissingPawn">GitHub Releases</a>
         </article>
         <article class="download-card">
           <h3>UCI-Compatible GUIs</h3>
           <p>MissingPawn can be used with UCI-compatible chess GUIs and chess software.</p>
-          <a class="btn" href="#download">Download</a>
+          <a class="btn" href="assets/MissingPawn.exe">Download</a>
         </article>
       </div>
     </section>
@@ -1288,17 +1239,17 @@
   <footer class="site-footer">
     <div class="footer-wrap">
       <div class="brand">
-        <img src="assets/logo.svg" alt="MissingPawn icon" />
+        <img src="assets/missingpawn-logo.png" alt="MissingPawn icon" />
         <span>MissingPawn</span>
       </div>
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#roadmap">Road to 3000</a>
         <a href="#play">Play MissingPawn</a>
-        <a href="#github">GitHub</a>
-        <a href="#ccrl">CCRL</a>
-        <a href="#facebook">Facebook</a>
-        <a href="mailto:contact@missingpawn.example">E-mail</a>
+        <a href="https://github.com/MissingHacker20/MissingPawn">GitHub</a>
+        <a href="https://computerchess.org.uk/404/">CCRL</a>
+        <a href="https://www.facebook.com/profile.php?id=61592214227744&locale=pl_PL">Facebook</a>
+        <a href="mailto:MPchessengine@gmail.com">E-mail</a>
       </div>
     </div>
   </footer>
@@ -1306,19 +1257,41 @@
   <script>
     const navToggle = document.getElementById('navToggle');
     const primaryMenu = document.getElementById('primaryMenu');
-    navToggle.addEventListener('click', function () {
-      primaryMenu.classList.toggle('open');
-      navToggle.classList.toggle('open');
-    });
-
-    // Lightweight chess board interaction: highlight a square when clicked
-    const squares = Array.from(document.querySelectorAll('#chessBoard .square'));
-    squares.forEach((square) => {
-      square.addEventListener('click', function () {
-        squares.forEach((item) => item.classList.remove('last-move'));
-        square.classList.add('last-move');
+    if (navToggle && primaryMenu) {
+      navToggle.addEventListener('click', function () {
+        primaryMenu.classList.toggle('open');
+        navToggle.classList.toggle('open');
       });
-    });
+    }
+
+    async function loadRoadmapData() {
+      try {
+        const response = await fetch('assets/roadmap-data.json');
+        const data = await response.json();
+        const title = document.getElementById('roadmapTitle');
+        const source = document.getElementById('roadmapSource');
+        if (title) title.textContent = data.title || 'MissingPawn rating progression';
+        if (source) source.textContent = data.sourceLabel || 'Sample data';
+
+        const points = document.getElementById('roadmapPoints');
+        if (points && Array.isArray(data.points)) {
+          points.innerHTML = data.points.map((pt) => `
+            <div class="roadmap-point">
+              <span class="roadmap-version">${pt.version}</span>
+              <span class="roadmap-elo">${pt.elo} Elo</span>
+              <span class="roadmap-meta">Source: ${pt.source}</span>
+              <span class="roadmap-meta">Time control: ${pt.timeControl}</span>
+              <span class="roadmap-meta">Date: ${pt.date}</span>
+            </div>`).join('');
+        }
+      } catch (e) {
+        console.warn('Roadmap data missing:', e);
+      }
+    }
+
+    loadRoadmapData();
   </script>
+  <script src="assets/missingpawn-bridge.js"></script>
+  <script src="assets/chessboard-init.js"></script>
 </body>
 </html>
