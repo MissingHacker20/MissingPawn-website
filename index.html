@@ -3,8 +3,23 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="assets/missingpawn-icon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MissingPawn — Homepage</title>
+    <meta name="description" content="MissingPawn — open-source UCI chess engine written in C++. Experimental project focused on pawn play and move search.">
+    <link rel="canonical" href="https://missinghacker20.github.io/MissingPawn-website/">
+    <meta property="og:title" content="MissingPawn — Open-Source Chess Engine">
+    <meta property="og:description" content="Open-source UCI chess engine written in C++, focused on tactical pawn play.">
+    <meta property="og:url" content="https://missinghacker20.github.io/MissingPawn-website/">
+    <meta property="og:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MissingPawn — Open-Source Chess Engine">
+    <meta name="twitter:description" content="Open-source UCI chess engine written in C++, focused on tactical pawn play.">
+    <meta name="twitter:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"MissingPawn","description":"Open-source UCI chess engine written in C++, focused on tactical pawn play.","programmingLanguage":"C++","codeRepository":"https://github.com/MissingHacker20/MissingPawn","author":{"@type":"Person","name":"MissingHacker20"},"url":"https://missinghacker20.github.io/MissingPawn-website/"}
+    </script>
+    <title>MissingPawn — Open-Source Chess Engine</title>
     <style>
         :root {
             --bg: #090b0f;
@@ -66,6 +81,7 @@
 
         .brand {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
             font-weight: 800
@@ -76,7 +92,8 @@
             height: 40px;
             border-radius: 50%;
             border: 1px solid var(--line);
-            padding: 3px
+            padding: 3px;
+            aspect-ratio: 1;
         }
 
         .nav-toggle {
@@ -244,7 +261,8 @@
 
         .hero-visual img {
             width: 100%;
-            border-radius: 8px
+            border-radius: 8px;
+            aspect-ratio: 1;
         }
 
         .section {
@@ -289,14 +307,14 @@
 
 <body>
     <header class="site-header">
-        <div class="header-wrap"><a class="brand" href="Homepage.html"><img src="assets/missingpawn-logo.png"
+        <div class="header-wrap"><a class="brand" href="./"><img src="assets/missingpawn-logo.png" width="1024" height="1024"
                     alt="Logo MissingPawn"><span>MissingPawn</span></a><button class="nav-toggle" id="navToggle"
-                aria-expanded="false" aria-controls="primaryMenu" aria-label="Otwórz menu"><span></span></button>
+                aria-expanded="false" aria-controls="primaryMenu" aria-label="Open menu"><span></span></button>
             <nav>
                 <ul class="primary-menu" id="primaryMenu">
-                    <li><a class="active" href="Homepage.html" target="_blank" rel="noopener">Homepage</a></li>
-                    <li><a href="About.html" target="_blank" rel="noopener">About</a></li>
-                    <li><a href="Pobierz.html" target="_blank" rel="noopener">Pobierz</a></li>
+                    <li><a class="active" href="./">Homepage</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Downland.html">Download</a></li>
                 </ul>
             </nav>
         </div>
@@ -306,36 +324,35 @@
             <div>
                 <div class="eyebrow">Open-source chess engine</div>
                 <h1>MissingPawn<br><span>— Chess Engine</span></h1>
-                <p>MissingPawn to otwartoźródłowy silnik szachowy UCI napisany w C++, skupiony na wyszukiwaniu, ocenie
-                    pozycji i strukturze pionów.</p>
-                <div class="actions"><a class="btn primary" href="Pobierz.html" target="_blank"
-                        rel="noopener">Pobierz</a><a class="btn" href="About.html" target="_blank" rel="noopener">O
-                        projekcie</a></div>
+                <p>MissingPawn is an open-source UCI chess engine written in C++, focused on search, position evaluation,
+                    and pawn structure.</p>
+                <div class="actions"><a class="btn primary" href="Downland.html">Download</a><a class="btn" href="About.html">O
+                        About the project</a></div>
             </div>
-            <div class="hero-visual"><img src="assets/missingpawn-logo.png" alt="MissingPawn chess engine"></div>
+            <div class="hero-visual"><img src="assets/missingpawn-logo.png" width="476" height="476" alt="MissingPawn chess engine"></div>
         </section>
         <section class="section">
-            <div class="kicker">Dlaczego MissingPawn</div>
+            <div class="kicker">Why MissingPawn</div>
             <div class="cards">
                 <article class="card">
                     <h3>UCI</h3>
-                    <p>Silnik współpracuje z programami obsługującymi protokół UCI.</p>
+                    <p>The engine works with programs that support the UCI protocol.</p>
                 </article>
                 <article class="card">
                     <h3>C++</h3>
-                    <p>Projekt jest tworzony w języku C++ z myślą o wydajności.</p>
+                    <p>The project is developed in C++ with performance in mind.</p>
                 </article>
                 <article class="card">
                     <h3>Open source</h3>
-                    <p>Kod projektu jest dostępny dla społeczności i dalszego rozwoju.</p>
+                    <p>The source code is available for the community and further development.</p>
                 </article>
             </div>
         </section>
     </main>
     <footer class="site-footer">
-        <div class="brand"><img src="assets/missingpawn-logo.png" alt="Logo"><span>MissingPawn</span></div>
-        <div class="footer-links"><a href="About.html" target="_blank" rel="noopener">About</a><a href="Pobierz.html"
-                target="_blank" rel="noopener">Pobierz</a></div>
+        <div class="brand"><img src="assets/missingpawn-logo.png" width="1024" height="1024" alt="Logo"><span>MissingPawn</span></div>
+        <div class="footer-links"><a href="About.html">About</a><a href="Downland.html"
+               >Download</a></div>
     </footer>
     <script>const b = document.getElementById('navToggle'), m = document.getElementById('primaryMenu'); b.addEventListener('click', () => { const open = m.classList.toggle('open'); b.classList.toggle('open', open); b.setAttribute('aria-expanded', open); });</script>
 </body>

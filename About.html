@@ -3,7 +3,22 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="assets/missingpawn-icon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="About MissingPawn, an open-source UCI chess engine written in C++.">
+    <link rel="canonical" href="https://missinghacker20.github.io/MissingPawn-website/About.html">
+    <meta property="og:title" content="MissingPawn — About">
+    <meta property="og:description" content="About the open-source MissingPawn UCI chess engine.">
+    <meta property="og:url" content="https://missinghacker20.github.io/MissingPawn-website/About.html">
+    <meta property="og:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MissingPawn — About">
+    <meta name="twitter:description" content="About the open-source MissingPawn UCI chess engine.">
+    <meta name="twitter:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"MissingPawn","description":"Open-source UCI chess engine written in C++, focused on tactical pawn play.","programmingLanguage":"C++","codeRepository":"https://github.com/MissingHacker20/MissingPawn","url":"https://missinghacker20.github.io/MissingPawn-website/About.html"}
+    </script>
     <title>MissingPawn — About</title>
     <style>
         :root {
@@ -53,6 +68,7 @@
 
         .brand {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
             font-weight: 800
@@ -63,7 +79,8 @@
             height: 40px;
             border: 1px solid var(--line);
             border-radius: 50%;
-            padding: 3px
+            padding: 3px;
+            aspect-ratio: 1;
         }
 
         .nav {
@@ -130,27 +147,31 @@
 
 <body>
     <header class="header">
-        <div class="wrap"><a class="brand" href="Homepage.html" target="_blank" rel="noopener"><img
-                    src="assets/missingpawn-logo.png" alt="Logo MissingPawn"><span>MissingPawn</span></a>
-            <nav class="nav"><a href="Homepage.html" target="_blank" rel="noopener">Homepage</a><a class="active"
-                    href="About.html" target="_blank" rel="noopener">About</a><a href="Pobierz.html" target="_blank"
-                    rel="noopener">Pobierz</a></nav>
+        <div class="wrap"><a class="brand" href="./"><img
+                    src="assets/missingpawn-logo.png" width="1024" height="1024" alt="Logo MissingPawn"><span>MissingPawn</span></a>
+            <nav class="nav"><a href="./">Homepage</a><a class="active"
+                    href="About.html">About</a><a href="Downland.html">Download</a></nav>
         </div>
     </header>
     <main class="wrap">
-        <div class="kicker">O projekcie</div>
-        <h1>Co to jest MissingPawn?</h1>
-        <p>MissingPawn to otwartoźródłowy silnik szachowy napisany w C++ i przeznaczony do używania z oprogramowaniem
-            obsługującym protokół UCI.</p>
-        <p>Projekt jest rozwijany eksperymentalnie. Koncentruje się na wyszukiwaniu ruchów, ocenie pozycji, grze
-            taktycznej i pozycyjnej oraz analizie struktur pionów.</p>
+        <div class="kicker">About the project</div>
+        <h1>What is MissingPawn?</h1>
+        <p>MissingPawn is an open-source chess engine written in C++ and intended for use with software
+            supporting the UCI protocol.</p>
+        <p>The project is being developed experimentally. It focuses on move search, position evaluation,
+            tactical and positional play, and pawn structure analysis. The current version available for download is <strong>v2</strong>.</p>
         <section class="panel">
-            <h2>Główne obszary</h2>
+            <h2>Engine tests</h2>
+            <p>Rating results and number of games played should be interpreted solely based on current CCRL or CCI data. We do not provide unverified ratings on the site.</p>
+            <p>The experimental approach to pawn play describes the project's goal and research area, not a confirmed advantage over other engines.</p>
+        </section>
+        <section class="panel">
+            <h2>Main areas</h2>
             <ul>
-                <li>Wyszukiwanie i generowanie ruchów</li>
-                <li>Ocena pozycji i punktacja</li>
-                <li>Analiza struktur pionów</li>
-                <li>Eksperymenty taktyczne i pozycyjne</li>
+                <li>Move search and generation</li>
+                <li>Position evaluation and scoring</li>
+                <li>Pawn structure analysis</li>
+                <li>Tactical and positional experiments</li>
             </ul>
         </section>
     </main>

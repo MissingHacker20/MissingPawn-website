@@ -3,8 +3,20 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="assets/missingpawn-icon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>MissingPawn — Pobierz</title>
+    <meta name="description" content="Download MissingPawn, an open-source UCI chess engine written in C++.">
+    <link rel="canonical" href="https://missinghacker20.github.io/MissingPawn-website/Downland.html">
+    <meta property="og:title" content="MissingPawn — Download">
+    <meta property="og:description" content="Download the latest MissingPawn engine release and visit the project links.">
+    <meta property="og:url" content="https://missinghacker20.github.io/MissingPawn-website/Downland.html">
+    <meta property="og:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MissingPawn — Download">
+    <meta name="twitter:description" content="Download the latest MissingPawn engine release.">
+    <meta name="twitter:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <title>MissingPawn — Download</title>
     <style>
         :root {
             --bg: #090b0f;
@@ -53,6 +65,7 @@
 
         .brand {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
             font-weight: 800
@@ -63,7 +76,8 @@
             height: 40px;
             border: 1px solid var(--line);
             border-radius: 50%;
-            padding: 3px
+            padding: 3px;
+            aspect-ratio: 1;
         }
 
         .nav {
@@ -153,44 +167,49 @@
 
 <body>
     <header class="header">
-        <div class="wrap"><a class="brand" href="Homepage.html" target="_blank" rel="noopener"><img
-                    src="assets/missingpawn-logo.png" alt="Logo MissingPawn"><span>MissingPawn</span></a>
-            <nav class="nav"><a href="Homepage.html" target="_blank" rel="noopener">Homepage</a><a href="About.html"
-                    target="_blank" rel="noopener">About</a><a class="active" href="Pobierz.html" target="_blank"
-                    rel="noopener">Pobierz</a></nav>
+            <nav class="nav"><a href="./">Homepage</a><a href="About.html"
+                   >About</a><a class="active" href="Downland.html">Download</a></nav>
         </div>
     </header>
     <main class="wrap">
-        <div class="kicker">Linki projektu</div>
-        <h1>Pobierz i odwiedź</h1>
-        <p class="intro">W tym miejscu znajdziesz wszystkie obecnie dostępne linki do projektu MissingPawn.</p>
+        <div class="kicker">Project links</div>
+        <h1>Download and links</h1>
+        <p class="intro">Here you can find the latest engine release and the main MissingPawn project links.</p>
         <div class="links">
             <article class="card">
                 <h2>GitHub</h2>
-                <p>Kod źródłowy, informacje o projekcie i wydania.</p><a class="btn"
+                <p>Source code, project information, and releases.</p><a class="btn"
                     href="https://github.com/MissingHacker20/MissingPawn" target="_blank"
-                    rel="noopener noreferrer">Otwórz GitHub</a>
+                    rel="noopener noreferrer">Open GitHub</a>
             </article>
             <article class="card">
                 <h2>Facebook</h2>
-                <p>Aktualności i informacje o projekcie.</p><a class="btn"
+                <p>News and information about the project.</p><a class="btn"
                     href="https://www.facebook.com/profile.php?id=61592214227744&locale=pl_PL" target="_blank"
-                    rel="noopener noreferrer">Otwórz Facebook</a>
-            </article>
-            <article class="card">
-                <h2>CCRL</h2>
-                <p>Profil silnika w Computer Chess Rating Lists.</p><a class="btn"
-                    href="https://computerchess.org.uk/404/" target="_blank" rel="noopener noreferrer">Otwórz CCRL</a>
-            </article>
-            <article class="card">
-                <h2>Plik silnika</h2>
-                <p>Pobierz plik wykonywalny MissingPawn.</p><a class="btn" href="assets/MissingPawn.exe" target="_blank"
-                    rel="noopener">Pobierz EXE</a>
+                    rel="noopener noreferrer">Open Facebook</a>
             </article>
         </div>
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <thead>
+    <tr>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid var(--line);">Version</th>
+      <th style="text-align:left; padding:8px; border-bottom:2px solid var(--line);">Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid var(--line);">MissingPawn v1</td>
+      <td style="padding:8px; border-bottom:1px solid var(--line);"><a class="btn" href="https://github.com/MissingHacker20/MissingPawn/releases/download/v1/MissingPawn.exe" target="_blank" rel="noopener noreferrer">Download</a></td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border-bottom:1px solid var(--line);">MissingPawn v2</td>
+      <td style="padding:8px; border-bottom:1px solid var(--line);"><a class="btn" href="https://github.com/MissingHacker20/MissingPawn/releases/download/v2/MissingPawn.exe" target="_blank" rel="noopener noreferrer">Download</a></td>
+    </tr>
+  </tbody>
+</table>
     </main>
     <footer class="footer">
-        <div class="wrap">MissingPawn — wszystkie linki w jednym miejscu</div>
+        <div class="wrap">MissingPawn — all links in one place</div>
     </footer>
 </body>
 
