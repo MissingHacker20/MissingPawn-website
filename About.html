@@ -156,11 +156,31 @@
     <main class="wrap">
 <div class="kicker">About the project</div>
     <h1>What is MissingPawn?</h1>
-    <p><strong>MissingPawn</strong> is an actively developed chess engine created by Kacper Wieczorek, also known as Missing Player. The project is written in C++ and uses CMake and the Universal Chess Interface (UCI) standard, allowing it to work with software that supports chess engines.</p>
-    <p>The main goal of MissingPawn is to <strong>experiment with different ways for a chess engine to make decisions</strong>. The project includes experiments with search algorithms, position evaluation, and tactical play. Particular attention is given to pawns — their movement, pawn structures, and their impact on the evaluation of a position.</p>
-    <p>The engine contains the core components required for independent chess play: board representation, move generation and validation, position search, position evaluation, UCI support, and opening-book support.</p>
-    <p>MissingPawn does not have a completely fixed architecture. <strong>Its structure and algorithms evolve between versions</strong>, as experimenting with new ideas and testing their impact on the engine's play is an important part of the project.</p>
-    <p>The project is open-source.</p>
+    <p><strong>MissingPawn</strong> is an open-source chess engine written in C++ and designed to work with UCI-compatible software. It is not built as a finished product in the traditional sense. It is built to test ideas, compare approaches, and explore what makes a position better or worse.</p>
+
+    <section class="panel">
+        <h2>Pawn structure and positional play</h2>
+        <p>MissingPawn is especially interested in the moments that shape a game long before tactical shots appear on the board. Pawn chains, weak squares, central tension, and structural imbalances are all part of the engine's focus.</p>
+        <p>That makes it a useful project for anyone curious about how positional understanding influences evaluation and decision-making in chess engines.</p>
+    </section>
+
+    <section class="panel">
+        <h2>Engine architecture</h2>
+        <p>At the technical level, MissingPawn includes the core building blocks of a chess engine: board representation, move generation, legal move validation, search, evaluation, and UCI communication.</p>
+        <p>The project is designed as an open experiment, which means the architecture can evolve as new ideas are tested, compared, and refined.</p>
+    </section>
+
+    <section class="panel">
+        <h2>Search, evaluation and testing</h2>
+        <p>One of the central themes of the project is experimentation. Different approaches to search depth, positional evaluation, tactical awareness, and move ordering can be examined and compared in a practical environment.</p>
+        <p>This makes MissingPawn relevant not only to chess enthusiasts, but also to anyone interested in how algorithms behave under real game conditions.</p>
+    </section>
+
+    <section class="panel">
+        <h2>Open development and learning</h2>
+        <p>What makes MissingPawn different is not only the code itself, but the philosophy behind it. The project is transparent, open-source, and built around learning through iteration.</p>
+        <p>It invites curiosity: whether you are interested in chess, software design, engine behavior, or the process of building something experimental from the ground up.</p>
+    </section>
     </main>
     <footer class="footer">
         <div class="wrap">MissingPawn — Open-source chess engine</div>
