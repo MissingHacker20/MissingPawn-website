@@ -12,14 +12,15 @@
     <meta property="og:description" content="Open-source UCI chess engine written in C++, focused on tactical pawn play.">
     <meta property="og:url" content="https://missinghacker20.github.io/MissingPawn-website/">
     <meta property="og:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
+    <meta property="og:image:alt" content="Official MissingPawn chess engine logo">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MissingPawn — Open-Source Chess Engine">
     <meta name="twitter:description" content="Open-source UCI chess engine written in C++, focused on tactical pawn play.">
     <meta name="twitter:image" content="https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png">
-    <script type="application/ld+json">
-        {"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"MissingPawn","description":"Open-source UCI chess engine written in C++, focused on tactical pawn play.","programmingLanguage":"C++","codeRepository":"https://github.com/MissingHacker20/MissingPawn","author":{"@type":"Person","name":"MissingHacker20"},"url":"https://missinghacker20.github.io/MissingPawn-website/"}
-    </script>
+<script type="application/ld+json">
+         {"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"MissingPawn","description":"Open-source UCI chess engine written in C++, focused on tactical pawn play.","programmingLanguage":"C++","codeRepository":"https://github.com/MissingHacker20/MissingPawn","author":{"@type":"Person","name":"MissingHacker20"},"url":"https://missinghacker20.github.io/MissingPawn-website/","image":"https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png"}
+     </script>
     <title>MissingPawn — Open-Source Chess Engine</title>
     <style>
         :root {
@@ -297,12 +298,13 @@
             border-top: 1px solid #ffffff12
         }
 
-        .footer-links {
+.footer-links {
             display: flex;
             gap: 18px;
             flex-wrap: wrap;
-            color: var(--muted)
+            color: var(--muted);
         }
+        .lead { font-size: 1.125em; font-style: italic; }
     </style>
 </head>
 
@@ -325,8 +327,7 @@
             <div>
                 <div class="eyebrow">Open-source chess engine</div>
                 <h1>MissingPawn<br><span>— Chess Engine</span></h1>
-                <p>MissingPawn is an open-source UCI chess engine written in C++, focused on search, position evaluation,
-                    and pawn structure.</p>
+<p class="lead"><strong>MissingPawn</strong> is an open-source, experimental chess engine written in C++, focused on experimenting with search, position evaluation, and especially pawn play.</p>
                 <div class="actions"><a class="btn primary" href="Downland.html">Download</a><a class="btn" href="About.html">O
                         About the project</a></div>
             </div>
