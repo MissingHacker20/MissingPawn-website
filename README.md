@@ -4,3 +4,5 @@ Official website of the [MissingPawn](https://github.com/MissingHacker20/Missing
 **Website:** https://missinghacker20.github.io/MissingPawn-website/
 
 The website provides information about the engine, links to the source code and download releases, as well as links to external services.
+
+[![OpenRepos](https://img.shields.io/endpoint?url=https://openrepos.org/status/missingpawn.sourcepage.org.json&style=flat-square)](https://missingpawn.sourcepage.org/)
