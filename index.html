@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="google-site-verification" content="X1_j0wpabfdaiTEHLv1ereZzIuherlZGBF6dgvLdoUY" />
     <link rel="icon" href="assets/missingpawn-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/site-effects.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="MissingPawn — open-source UCI chess engine written in C++. Experimental project focused on pawn play and move search.">
     <link rel="canonical" href="https://missinghacker20.github.io/MissingPawn-website/">
@@ -322,6 +323,92 @@
             }
         }
 
+        @keyframes page-enter {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .site-header {
+            animation: header-enter .55s ease-out both
+        }
+
+        @keyframes header-enter {
+            from {
+                opacity: 0;
+                transform: translateY(-12px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        main > * {
+            animation: page-enter .65s ease-out both
+        }
+
+        main > :nth-child(2) {
+            animation-delay: .1s
+        }
+
+        main > :nth-child(3) {
+            animation-delay: .2s
+        }
+
+        main > :nth-child(4) {
+            animation-delay: .3s
+        }
+
+        .cards > *,
+        .actions > * {
+            animation: page-enter .65s ease-out both
+        }
+
+        .cards > :nth-child(2) {
+            animation-delay: .12s
+        }
+
+        .cards > :nth-child(3) {
+            animation-delay: .24s
+        }
+
+        .nav-toggle,
+        .btn,
+        .card,
+        .hero-visual {
+            transition: transform .2s ease, border-color .2s ease, background-color .2s ease
+        }
+
+        .nav-toggle:hover,
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .card:hover,
+        .hero-visual:hover {
+            transform: translateY(-4px);
+            border-color: var(--red)
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important
+            }
+        }
+
         .lead { font-size: 1.125em; font-style: italic; }
     </style>
 </head>
@@ -377,6 +464,7 @@
         <div>© 2026 Kacper Wieczorek · Website licensed under the <a href="LICENSE">MIT License</a>.</div>
     </footer>
     <script>const b = document.getElementById('navToggle'), m = document.getElementById('primaryMenu'); b.addEventListener('click', () => { const open = m.classList.toggle('open'); b.classList.toggle('open', open); b.setAttribute('aria-expanded', open); });</script>
+    <script src="assets/site-effects.js"></script>
 </body>
 
 </html>
