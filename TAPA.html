@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="assets/missingpawn-icon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MissingPawn — TAPA</title>
+    <style>
+        :root {
+            --bg: #090b0f;
+            --panel: #151a22;
+            --line: #353a46;
+            --text: #eef1ee;
+            --muted: #b7bdc7
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.8 Segoe UI, Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: #090b0fe8;
+            border-bottom: 1px solid #ffffff14;
+            backdrop-filter: blur(14px)
+        }
+
+        .header-wrap,
+        .site-footer {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto
+        }
+
+        .header-wrap {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            font: 16px/1.7 Segoe UI, Arial, sans-serif
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            padding: 3px;
+            aspect-ratio: 1
+        }
+
+        .nav-toggle {
+            display: flex;
+            width: 44px;
+            height: 44px;
+            margin-left: 20px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: var(--panel);
+            color: var(--text);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer
+        }
+
+        .nav-toggle span,
+        .nav-toggle span:before,
+        .nav-toggle span:after {
+            width: 19px;
+            height: 2px;
+            background: var(--text);
+            display: block;
+            position: relative
+        }
+
+        .nav-toggle span:before,
+        .nav-toggle span:after {
+            content: "";
+            position: absolute;
+            left: 0
+        }
+
+        .nav-toggle span:before {
+            top: -6px
+        }
+
+        .nav-toggle span:after {
+            top: 6px
+        }
+
+        .nav-toggle.open span {
+            background: transparent
+        }
+
+        .nav-toggle.open span:before {
+            top: 0;
+            transform: rotate(45deg)
+        }
+
+        .nav-toggle.open span:after {
+            top: 0;
+            transform: rotate(-45deg)
+        }
+
+        .primary-menu {
+            display: none;
+            position: absolute;
+            top: 72px;
+            right: 20px;
+            width: 240px;
+            margin: 0;
+            padding: 12px 20px;
+            list-style: none;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            box-shadow: 0 15px 40px #0008
+        }
+
+        .primary-menu.open {
+            display: block
+        }
+
+        .primary-menu a {
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #ffffff0f;
+            color: var(--muted);
+            font-weight: 700
+        }
+
+        .primary-menu a:hover,
+        .primary-menu a.active {
+            color: var(--text)
+        }
+
+        .header-wrap nav {
+            margin-left: auto
+        }
+
+        main {
+            flex: 1
+        }
+
+        .content-wrap {
+            width: min(1000px, calc(100% - 40px));
+            margin: auto;
+            padding: 80px 0
+        }
+
+        .kicker {
+            color: var(--muted);
+            font-size: .8rem;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        h1 {
+            margin: 12px 0 24px;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -.04em
+        }
+
+        h1 span {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: .48em;
+            letter-spacing: 0
+        }
+
+        p {
+            color: var(--muted)
+        }
+
+        .lead {
+            max-width: 760px;
+            font-size: 1.15rem
+        }
+
+        .content-section {
+            margin-top: 44px
+        }
+
+        .content-section h2 {
+            margin: 0 0 18px;
+            font-size: 1.55rem
+        }
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px
+        }
+
+        .objective,
+        .info-panel {
+            padding: 22px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 10px
+        }
+
+        .objective h3 {
+            margin: 0 0 8px
+        }
+
+        .objective p,
+        .info-panel p {
+            margin: 0
+        }
+
+        .info-panel p + p {
+            margin-top: 14px
+        }
+
+        .contributor-panel {
+            border-left: 3px solid var(--red)
+        }
+
+        .closing {
+            margin-top: 28px;
+            font-weight: 700;
+            color: var(--text)
+        }
+
+        .site-footer {
+            padding: 35px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            border-top: 1px solid #ffffff12;
+            color: var(--muted);
+            font: 16px/1.7 Segoe UI, Arial, sans-serif
+        }
+
+        @media(max-width:600px) {
+            .content-wrap {
+                padding: 55px 0
+            }
+
+            .objectives {
+                grid-template-columns: 1fr
+            }
+
+            .site-footer {
+                flex-direction: column
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-wrap"><a class="brand" href="./"><img src="assets/missingpawn-logo.png" width="1024" height="1024"
+                    alt="Logo MissingPawn"><span>MissingPawn</span></a>
+            <nav>
+                <ul class="primary-menu" id="primaryMenu">
+                    <li><a href="./">Homepage</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Download.html">Download</a></li>
+                    <li><a class="active" href="TAPA.html">TAPA</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryMenu"
+                aria-label="Open menu"><span></span></button>
+        </div>
+    </header>
+    <main class="content-wrap">
+        <div class="kicker">Experimental chess evaluation</div>
+        <h1>T.A.P.A.<span>Technologia Aestimationis Pignorium Absentium</span></h1>
+        <p class="lead"><strong>T.A.P.A.</strong> is an experimental neural network architecture based on NNUE, designed for potential integration into future versions of the MissingPawn chess engine.</p>
+        <p>The project explores an alternative way of representing chess positions by separating pawn structure, individual pieces, and king position. Its main goal is to reduce redundant feature encoding, improve computational efficiency, and develop a compact evaluation network without sacrificing the information needed for accurate chess position evaluation.</p>
+
+        <section class="content-section">
+            <h2>Key Objectives</h2>
+            <div class="objectives">
+                <article class="objective">
+                    <h3>Custom Feature Representation</h3>
+                    <p>Experimenting with a specialized representation of pawn structures, pieces, and king positions.</p>
+                </article>
+                <article class="objective">
+                    <h3>Efficient Incremental Updates</h3>
+                    <p>Updating evaluation data after moves instead of recomputing everything from scratch.</p>
+                </article>
+                <article class="objective">
+                    <h3>Performance Optimization</h3>
+                    <p>Reducing unnecessary computations, memory usage, and model complexity.</p>
+                </article>
+                <article class="objective">
+                    <h3>Neural Network Training</h3>
+                    <p>Developing a trainable model with verifiable evaluation quality.</p>
+                </article>
+                <article class="objective">
+                    <h3>MissingPawn Integration</h3>
+                    <p>Building a foundation for future integration and performance benchmarking.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Current Status</h2>
+            <div class="info-panel">
+                <p>T.A.P.A. is an ongoing experimental project. Its repository contains an initial implementation skeleton, but the target architecture, complete training pipeline, and reliable evaluation model still require further development and testing.</p>
+                <p>The project takes inspiration from the evaluation architecture of <strong>MissingPawn v3</strong>, exploring a different approach to neural network-based chess evaluation.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Looking for a Contributor</h2>
+            <div class="info-panel contributor-panel">
+                <p>I am looking for someone interested in continuing the project’s development. If you are interested in neural networks, chess engine development, C++, or NNUE architectures, and would like to help bring T.A.P.A. further, contributions and collaboration are welcome. You can get in touch through the engine’s Facebook profile; the link is available on the <a href="Download.html">Download page</a>.</p>
+                <p class="closing">T.A.P.A. is a work in progress — an opportunity to experiment, improve, and build something new for chess engine evaluation.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="brand"><img src="assets/missingpawn-logo.png" width="1024" height="1024" alt="Logo"><span>MissingPawn</span></div>
+        <div>© 2026 Kacper Wieczorek · Website licensed under the <a href="LICENSE">MIT License</a>.</div>
+    </footer>
+    <script>const b = document.getElementById('navToggle'), m = document.getElementById('primaryMenu'); b.addEventListener('click', () => { const open = m.classList.toggle('open'); b.classList.toggle('open', open); b.setAttribute('aria-expanded', open); });</script>
+</body>
+
+</html>

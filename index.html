@@ -87,8 +87,9 @@
             margin: auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px
+            justify-content: flex-start;
+            gap: 20px;
+            font: 16px/1.7 Segoe UI, Arial, sans-serif
         }
 
         .brand {
@@ -110,6 +111,7 @@
 
         .nav-toggle {
             display: flex;
+            margin-left: 20px;
             width: 44px;
             height: 44px;
             border: 1px solid var(--line);
@@ -189,6 +191,10 @@
         .primary-menu a:hover,
         .primary-menu a.active {
             color: var(--text)
+        }
+
+        .header-wrap nav {
+            margin-left: auto
         }
 
         main,
@@ -305,15 +311,17 @@
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            border-top: 1px solid #ffffff12
+            border-top: 1px solid #ffffff12;
+            color: var(--muted);
+            font: 16px/1.7 Segoe UI, Arial, sans-serif
         }
 
-.footer-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            color: var(--muted);
+        @media(max-width:600px) {
+            .site-footer {
+                flex-direction: column
+            }
         }
+
         .lead { font-size: 1.125em; font-style: italic; }
     </style>
 </head>
@@ -321,15 +329,17 @@
 <body>
     <header class="site-header">
         <div class="header-wrap"><a class="brand" href="./"><img src="assets/missingpawn-logo.png" width="1024" height="1024"
-                    alt="Logo MissingPawn"><span>MissingPawn</span></a><button class="nav-toggle" id="navToggle"
-                aria-expanded="false" aria-controls="primaryMenu" aria-label="Open menu"><span></span></button>
+                    alt="Logo MissingPawn"><span>MissingPawn</span></a>
             <nav>
                 <ul class="primary-menu" id="primaryMenu">
                     <li><a class="active" href="./">Homepage</a></li>
                     <li><a href="About.html">About</a></li>
                     <li><a href="Download.html">Download</a></li>
+                    <li><a href="TAPA.html">TAPA</a></li>
                 </ul>
             </nav>
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryMenu"
+                aria-label="Open menu"><span></span></button>
         </div>
     </header>
     <main>
@@ -364,8 +374,7 @@
     </main>
     <footer class="site-footer">
         <div class="brand"><img src="assets/missingpawn-logo.png" width="1024" height="1024" alt="Logo"><span>MissingPawn</span></div>
-        <div class="footer-links"><a href="About.html">About</a><a href="Download.html"
-               >Download</a></div>
+        <div>© 2026 Kacper Wieczorek · Website licensed under the <a href="LICENSE">MIT License</a>.</div>
     </footer>
     <script>const b = document.getElementById('navToggle'), m = document.getElementById('primaryMenu'); b.addEventListener('click', () => { const open = m.classList.toggle('open'); b.classList.toggle('open', open); b.setAttribute('aria-expanded', open); });</script>
 </body>
