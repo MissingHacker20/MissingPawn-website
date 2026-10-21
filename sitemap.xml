@@ -1,7 +1,28 @@
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://missinghacker20.github.io/MissingPawn-website/</loc></url>
-  <url><loc>https://missinghacker20.github.io/MissingPawn-website/About.html</loc></url>
-  <url><loc>https://missinghacker20.github.io/MissingPawn-website/Download.html</loc></url>
-  <url><loc>https://missinghacker20.github.io/MissingPawn-website/TAPA.html</loc></url>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <url>
+        <loc>https://missinghacker20.github.io/MissingPawn-website/</loc>
+        <image:image>
+            <image:loc>https://missinghacker20.github.io/MissingPawn-website/assets/missingpawn-logo.png</image:loc>
+            <image:title>MissingPawn Chess Engine Logo</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://missinghacker20.github.io/MissingPawn-website/About.html</loc>
+    </url>
+
+    <url>
+        <loc>https://missinghacker20.github.io/MissingPawn-website/Download.html</loc>
+    </url>
+
+    <url>
+        <loc>https://missinghacker20.github.io/MissingPawn-website/TAPA.html</loc>
+    </url>
+
 </urlset>
+```

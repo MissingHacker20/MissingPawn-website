@@ -1,5 +1,6 @@
 (() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
 
@@ -50,14 +51,17 @@
     function draw() {
         context.clearRect(0, 0, width, height);
 
-        const glow = context.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 340);
+        const interactive = !mobileViewport.matches && !reducedMotion.matches;
+        const glowX = interactive ? pointer.x : -1000;
+        const glowY = interactive ? pointer.y : -1000;
+        const glow = context.createRadialGradient(glowX, glowY, 0, glowX, glowY, 340);
         glow.addColorStop(0, 'rgba(210, 42, 42, 0.2)');
         glow.addColorStop(1, 'rgba(210, 42, 42, 0)');
         context.fillStyle = glow;
         context.fillRect(0, 0, width, height);
 
         points.forEach((point, index) => {
-            if (!reducedMotion.matches) {
+            if (interactive) {
                 point.x += point.vx;
                 point.y += point.vy;
                 point.phase += 0.018;
@@ -66,7 +70,7 @@
                 if (point.y < -10 || point.y > height + 10) point.vy *= -1;
             }
 
-            const pulse = reducedMotion.matches ? 1 : 0.75 + Math.sin(point.phase) * 0.25;
+            const pulse = interactive ? 0.75 + Math.sin(point.phase) * 0.25 : 1;
             context.beginPath();
             context.arc(point.x, point.y, point.radius * pulse, 0, Math.PI * 2);
             context.fillStyle = 'rgba(235, 86, 86, 0.78)';
@@ -98,7 +102,7 @@
             }
 
             const pointerDistance = Math.hypot(point.x - pointer.x, point.y - pointer.y);
-            if (pointerDistance < 190) {
+            if (interactive && pointerDistance < 190) {
                 context.beginPath();
                 context.moveTo(point.x, point.y);
                 context.lineTo(pointer.x, pointer.y);
@@ -108,7 +112,7 @@
             }
         });
 
-        if (!reducedMotion.matches && !document.hidden) {
+        if (interactive && !document.hidden) {
             animationFrame = window.requestAnimationFrame(draw);
         }
     }
@@ -120,6 +124,10 @@
 
     window.addEventListener('resize', resize);
     window.addEventListener('pointermove', (event) => {
+        if (mobileViewport.matches || reducedMotion.matches) {
+            return;
+        }
+
         pointer.x = event.clientX;
         pointer.y = event.clientY;
     }, { passive: true });
@@ -129,6 +137,7 @@
     });
     document.addEventListener('visibilitychange', startAnimation);
     reducedMotion.addEventListener('change', startAnimation);
+    mobileViewport.addEventListener('change', startAnimation);
 
     document.querySelectorAll('main h1').forEach((heading) => {
         heading.classList.add('motion-reveal');
