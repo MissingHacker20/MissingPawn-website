@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.8 Segoe UI, Arial, sans-serif
+}
+
+.wrap {
+    width: min(1000px, calc(100% - 40px));
+    margin: auto
+}
+
+main.wrap {
+    padding: 100px 0
+}
+
+.kicker {
+    color: var(--red);
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase
+}
+
+h1 {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 1.1;
+    margin: 16px 0 25px
+}
+
+.intro,
+p {
+    color: var(--muted)
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 38px
+}
+
+.card {
+    min-width: 0;
+    padding: 28px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px
+}
+
+.card h2 {
+    margin-top: 0
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--red)
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--red);
+    font-weight: 800
+}
+
+.btn:hover {
+    background: #eb3838;
+    transform: translateY(-2px)
+}
+
+.versions {
+    width: 100%;
+    margin-top: 28px;
+    border-collapse: collapse;
+    text-align: left
+}
+
+.versions th,
+.versions td {
+    padding: 8px;
+    border-bottom: 1px solid var(--line)
+}
+
+.versions th {
+    border-bottom-width: 2px
+}
+
+.versions td .btn {
+    white-space: nowrap
+}
+
+@media(max-width:800px) {
+    .links {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+@media(max-width:600px) {
+    main.wrap {
+        padding: 55px 0
+    }
+
+    .links {
+        grid-template-columns: 1fr
+    }
+
+    .card {
+        padding: 22px
+    }
+
+    .versions td,
+    .versions th {
+        padding: 8px 4px
+    }
+
+    .versions td .btn {
+        padding: 8px 12px;
+        font-size: .75rem
+    }
+}

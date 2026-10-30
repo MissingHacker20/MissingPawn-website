@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="assets/missingpawn-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/common.css">
+    <link rel="stylesheet" href="assets/about.css">
     <link rel="stylesheet" href="assets/site-effects.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="About MissingPawn, an open-source UCI chess engine written in C++.">
@@ -21,280 +23,6 @@
         {"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"MissingPawn","description":"Open-source UCI chess engine written in C++, focused on tactical pawn play.","programmingLanguage":"C++","codeRepository":"https://github.com/MissingHacker20/MissingPawn","url":"https://missinghacker20.github.io/MissingPawn-website/About.html"}
     </script>
     <title>MissingPawn — About</title>
-    <style>
-        :root {
-            --bg: #090b0f;
-            --panel: #151a22;
-            --line: #353a46;
-            --text: #eef1ee;
-            --muted: #b7bdc7;
-            --red: #d22a2a
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font: 16px/1.8 Segoe UI, Arial, sans-serif
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 2;
-            background: #090b0fe8;
-            border-bottom: 1px solid #ffffff14;
-            backdrop-filter: blur(14px)
-        }
-
-        .wrap {
-            width: min(1000px, calc(100% - 40px));
-            margin: auto
-        }
-
-        .header-wrap {
-            width: min(1180px, calc(100% - 40px));
-            min-height: 72px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
-            font: 16px/1.7 Segoe UI, Arial, sans-serif
-        }
-
-        .brand {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800
-        }
-
-        .brand img {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--line);
-            border-radius: 50%;
-            padding: 3px;
-            aspect-ratio: 1;
-        }
-
-        .nav-toggle {
-            display: flex;
-            margin-left: 20px;
-            width: 44px;
-            height: 44px;
-            border: 1px solid var(--line);
-            border-radius: 50%;
-            background: var(--panel);
-            color: var(--text);
-            align-items: center;
-            justify-content: center;
-            cursor: pointer
-        }
-
-        .nav-toggle span,
-        .nav-toggle span:before,
-        .nav-toggle span:after {
-            width: 19px;
-            height: 2px;
-            background: var(--text);
-            display: block;
-            position: relative
-        }
-
-        .nav-toggle span:before,
-        .nav-toggle span:after {
-            content: "";
-            position: absolute;
-            left: 0
-        }
-
-        .nav-toggle span:before {
-            top: -6px
-        }
-
-        .nav-toggle span:after {
-            top: 6px
-        }
-
-        .nav-toggle.open span {
-            background: transparent
-        }
-
-        .nav-toggle.open span:before {
-            top: 0;
-            transform: rotate(45deg)
-        }
-
-        .nav-toggle.open span:after {
-            top: 0;
-            transform: rotate(-45deg)
-        }
-
-        .primary-menu {
-            display: none;
-            position: absolute;
-            top: 72px;
-            right: 20px;
-            width: 240px;
-            margin: 0;
-            padding: 12px 20px;
-            list-style: none;
-            background: var(--panel);
-            border: 1px solid var(--line);
-            box-shadow: 0 15px 40px #0008
-        }
-
-        .primary-menu.open {
-            display: block
-        }
-
-        .primary-menu a {
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid #ffffff0f;
-            color: var(--muted);
-            font-weight: 700
-        }
-
-        .primary-menu a:hover,
-        .primary-menu a.active {
-            color: var(--text)
-        }
-
-        .header-wrap nav {
-            margin-left: auto
-        }
-
-        main {
-            padding: 100px 0
-        }
-
-        .kicker {
-            color: var(--red);
-            font-size: .8rem;
-            font-weight: 800;
-            letter-spacing: .18em;
-            text-transform: uppercase
-        }
-
-        h1 {
-            font-size: clamp(2.8rem, 7vw, 5rem);
-            line-height: 1.1;
-            margin: 16px 0 28px
-        }
-
-        h2 {
-            margin-top: 45px
-        }
-
-        p,
-        li {
-            color: var(--muted)
-        }
-
-        .panel {
-            margin-top: 35px;
-            padding: 28px;
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 10px
-        }
-
-        .site-footer {
-            width: min(1180px, calc(100% - 40px));
-            margin: auto;
-            padding: 35px 0;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            border-top: 1px solid #ffffff12;
-            color: var(--muted);
-            font: 16px/1.7 Segoe UI, Arial, sans-serif
-        }
-
-        @media(max-width:600px) {
-            .site-footer {
-                flex-direction: column
-            }
-        }
-
-        @keyframes page-enter {
-            from {
-                opacity: 0;
-                transform: translateY(16px)
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-
-        .site-header {
-            animation: header-enter .55s ease-out both
-        }
-
-        @keyframes header-enter {
-            from {
-                opacity: 0;
-                transform: translateY(-12px)
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-
-        main > * {
-            animation: page-enter .65s ease-out both
-        }
-
-        main > :nth-child(2) {
-            animation-delay: .1s
-        }
-
-        main > :nth-child(3) {
-            animation-delay: .2s
-        }
-
-        main > :nth-child(4) {
-            animation-delay: .3s
-        }
-
-        .panel {
-            transition: transform .2s ease, border-color .2s ease
-        }
-
-        .panel:hover {
-            transform: translateY(-4px);
-            border-color: var(--red)
-        }
-
-        @media(prefers-reduced-motion:reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important
-            }
-        }
-
-    </style>
 </head>
 
 <body>
@@ -310,7 +38,7 @@
                 </ul>
             </nav>
             <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryMenu"
-                aria-label="Open menu"><span></span></button>
+                aria-label="Open menu" type="button"><span></span></button>
         </div>
     </header>
     <main class="wrap">
@@ -346,7 +74,7 @@
         <div class="brand"><img src="assets/missingpawn-logo.png" width="1024" height="1024" alt="Logo"><span>MissingPawn</span></div>
         <div>© 2026 Kacper Wieczorek · Website licensed under the <a href="LICENSE">MIT License</a>.</div>
     </footer>
-    <script>const b = document.getElementById('navToggle'), m = document.getElementById('primaryMenu'); b.addEventListener('click', () => { const open = m.classList.toggle('open'); b.classList.toggle('open', open); b.setAttribute('aria-expanded', open); });</script>
+    <script>const b=document.getElementById('navToggle'),m=document.getElementById('primaryMenu');b.addEventListener('click',()=>{const open=m.classList.toggle('open');b.classList.toggle('open',open);b.setAttribute('aria-expanded',open);b.setAttribute('aria-label',open?'Close menu':'Open menu');});</script>
     <script src="assets/site-effects.js"></script>
 </body>
 
